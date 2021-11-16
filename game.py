@@ -2,7 +2,7 @@ import random
 
 
 print(50*'-') 
-print(20*'-', "Game Started",20*"*")
+print(20*'*', "Game Started",20*"*")
 print(50*'-')
 deck_data = []
 
@@ -27,7 +27,8 @@ for count in range(1,5):
     for picture_card in ['j','k','q']:
         deck_data.append({"color":color, "shape":shape, "card":picture_card})
 
-    
+print(deck_data[ 1])  
+
 
 
 black_data = list(filter(lambda each: each["color"]=="black", deck_data))
@@ -112,14 +113,13 @@ combine_list = player1_cards + player2_cards + player3_cards
 deck_after_distribution = []
 num_ = 0
 
-while num_ < 51:
+while num_ <= 51:
 
     if deck_data[num_] not in combine_list:
-        num_ += 1
         
         deck_after_distribution.append(deck_data[num_])
         
-
+        num_ += 1
     else :
         
         num_ += 1
