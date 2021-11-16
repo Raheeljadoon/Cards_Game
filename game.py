@@ -1,9 +1,9 @@
 import random
 
 
-print(50*'*') 
-print(20*'*', "Game Started",20*"*")
-print(50*'*')
+print(50*'-') 
+print(20*'-', "Game Started",20*"*")
+print(50*'-')
 deck_data = []
 
 shape_dic = {0:"CLUB",1:"SPADE",2:"HEART",3:"DIAMOND"}
@@ -49,7 +49,9 @@ for i in range(0,52):
 random_cards = random.sample(list_range,15)
 
 
-print("Total Cards in deck are  :",len(deck_data))
+print(20*'*',"Total Cards in deck are  :",len(deck_data),20*'*')
+print(50*'-') 
+print(20*'-',"Cards Are Now Distributing",20*'-')
 
 
 player1_list = [random_cards[0],random_cards[1],random_cards[2],random_cards[3],random_cards[4]]
@@ -68,8 +70,9 @@ for numb1 in player1_list:
     player1_cards.append(deck_data[numb1])
     # print(numb1)
     
-
+print(50*'-') 
 print("**************  Player 1 cards ***************")
+print(50*'-') 
 print(player1_cards)
 
 
@@ -78,10 +81,11 @@ player2_cards = []
 
 for numb2 in player2_list:
     player2_cards.append(deck_data[numb2])
-    print(numb2)
+    # print(numb2)
    
-    
+print(50*'-') 
 print("**************  Player 2 cards ***************")
+print(50*'-') 
 print(player2_cards)
 
 
@@ -91,10 +95,11 @@ player3_cards = []
 
 for numb3 in player3_list:
     player3_cards.append(deck_data[numb3])
-    print(numb2)
+    # print(numb2)
     
-    
+print(50*'-') 
 print("**************  Player 3 cards ***************")
+print(50*'-') 
 print(player3_cards)
 
 
@@ -119,11 +124,11 @@ while num_ < 51:
         
         num_ += 1
         
-print(50*'*') 
-print(50*'*') 
-print(20*'*' ,"After distribution of cards :",len(deck_after_distribution))
-print(50*'*') 
-print(50*'*') 
+print(50*'-') 
+print(50*'-') 
+print(20*'*' ,"After distribution number of cards are :",len(deck_after_distribution),20*'*')
+print(50*'-') 
+print(50*'-') 
 
 
 
