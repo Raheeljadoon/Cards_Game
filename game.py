@@ -1,5 +1,6 @@
 import random
 
+center_card_val = ""
 
 print(50*'-') 
 print(20*'*', "Game Started",20*"*")
@@ -54,14 +55,13 @@ player1_cards = []
 
 for numb1 in player1_list:
     player1_cards.append(deck_data[numb1])
-    
-    
+      
 print(50*'-') 
 print("**************  Player 1 cards ***************")
 print(50*'-') 
 
-for each_card in player1_cards:
-    print(" {} {} of {} ".format(each_card['color'],each_card['shape'],each_card["card"]))
+for each_card_1 in player1_cards:
+    print(" {} {} of {} ".format(each_card_1['color'],each_card_1['shape'],each_card_1["card"]))
 
 
 player2_cards = []
@@ -69,26 +69,24 @@ player2_cards = []
 for numb2 in player2_list:
     player2_cards.append(deck_data[numb2])
     
-   
 print(50*'-') 
 print("**************  Player 2 cards ***************")
 print(50*'-') 
 
-for each_card in player2_cards:
-    print(" {} {} of {} ".format(each_card['color'],each_card['shape'],each_card["card"]))
+for each_card_2 in player2_cards:
+    print(" {} {} of {} ".format(each_card_2['color'],each_card_2['shape'],each_card_2["card"]))
 
 player3_cards = []
 
 for numb3 in player3_list:
     player3_cards.append(deck_data[numb3])
    
-    
 print(50*'-') 
 print("**************  Player 3 cards ***************")
 print(50*'-') 
 
-for each_card in player3_cards:
-    print(" {} {} of {} ".format(each_card['color'],each_card['shape'],each_card["card"]))
+for each_card_3 in player3_cards:
+    print(" {} {} of {} ".format(each_card_3['color'],each_card_3['shape'],each_card_3["card"]))
 
 card_in_center = []
 
@@ -122,3 +120,43 @@ print(50*'-')
 print(20*'*' ,"After distribution number of cards are :",len(deck_after_distribution),20*'*')
 print(50*'-') 
 print(50*'-') 
+
+
+# player1 move to make  
+# card match top center either in number or in shape 
+
+player_1_card_index = 0
+player_1_card_index_for_if = 0
+
+for each_cards in player1_cards:
+    
+    
+
+    if each_cards['shape'] == each_center_card['shape']:
+
+        while player_1_card_index_for_if < 1 :
+
+            print("---------------------- player_1 have card match with center with either shape or number ")
+            
+
+            match_card = player1_cards[player_1_card_index]
+            print(30*'=')
+            print("Match card is : {} {} of {}".format(match_card['color'],match_card['shape'],match_card['card']))
+
+            card_in_center.append(match_card)
+            player1_cards.pop(player_1_card_index)
+            
+            player_1_card_index_for_if += 1
+
+    else :
+        
+        player_1_card_index += 1
+
+
+print(30*'=')
+
+for each_center_card in card_in_center:
+    # print("-==============================")
+    print("----------Now Cards in center are  : {} {} of {} ".format(each_center_card['color'],each_center_card['shape'],each_center_card["card"]))
+   
+

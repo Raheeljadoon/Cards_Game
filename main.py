@@ -34,3 +34,14 @@
 # spade = [1,2,3,4,5,6,7,8,9,10,"K_S","Q_S","J_S"]
 
 
+
+# num__ = 0
+# for cards_ in combine_list:
+#     print(combine_list[num__]['color'])
+#     num__  += 1 
+
+
+# num__ = 0
+# for cards_ in combine_list:
+#     print(combine_list[num__]['shape'])
+#     num__  += 1 
