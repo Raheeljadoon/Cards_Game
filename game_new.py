@@ -27,7 +27,7 @@ deck_data_dic = {}
 for count,each_card in enumerate(deck_data):
     deck_data_dic[count] = each_card
 
-print(deck_data_dic)
+# print(deck_data_dic)
 
 
 
@@ -42,12 +42,12 @@ while counter < number_of_random_card:
         counter +=1
         random_card.append(rand)
 
-print(random_card)
-print(len(random_card))
+# print(random_card)
+# print(len(random_card))
 
 players_card = [random_card[i:i + 5] for i in range(0, len(random_card), 5)] 
-print(players_card)
-print(players_card[1])
+# print(players_card)
+# print(players_card[1])
 
 
 # now remove the random card from deck of card and assign to players
@@ -61,18 +61,39 @@ for count ,player in enumerate(players_card):
 
     dic["player_{}".format(count+1)] = list_of_card
 
-print(dic)
+print(50*'=')
+players1_card = dic['player_1']
+
+for each_card_1 in players1_card:
+    print(" {} {} of {} ".format(each_card_1['color'],each_card_1['shape'],each_card_1["card"]))
+
+
+print(50*'=')
+players2_card = dic['player_2']
+
+for each_card_2 in players2_card:
+    print(" {} {} of {} ".format(each_card_2['color'],each_card_2['shape'],each_card_2["card"]))
+
+
+print(50*'=')
+players3_card = dic['player_3']
+
+for each_card_3 in players3_card:
+    print(" {} {} of {} ".format(each_card_3['color'],each_card_3['shape'],each_card_3["card"]))    
+
+print(50*'=')
+
         
 # all cards are assign to the players and remove from the deck
 
-print(len(deck_data_dic))
+# print(len(deck_data_dic))
 
 center_cards = []
 
-print(deck_data_dic.keys())
+# print(deck_data_dic.keys())
 center_cards.append(deck_data_dic.pop(sample(deck_data_dic.keys(),1)[0]))
 
-print(center_cards[-1])
+# print(center_cards[-1])
 print(len(deck_data_dic))
 
 # run all the cards of user
@@ -82,15 +103,22 @@ while endgame == False:
     for key, value in dic.items():
         
         for index ,each_player_cards in enumerate(value) :
+
             if center_cards[-1]["shape"] == each_player_cards['shape'] or center_cards[-1]["card"] == each_player_cards['card']:
-                print("player :", key)
+                print("==========================player :", key)
 
                 center_cards.append(value.pop(index)) 
-                print(center_cards)
+                # print("center cards are =========================" ,center_cards)
+                for each_center in center_cards:
+
+                    print(" {} {} of {} ".format(each_center['color'],each_center['shape'],each_center["card"]))
+
+                # if len(deck_data_dic) == 0:
+                #     deck_data_dic.append(center_cards)
 
     for key , value in dic.items():
         if len(value) == 0:
-            print("Winnner !! ",key)
+            print("===========================Winnner !! ",key)
             endgame = True
                 
 
