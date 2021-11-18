@@ -40,7 +40,7 @@ list_range = []
 for i in range(0,52):
     list_range.append(i)
 
-random_cards = random.sample(list_range,16)
+random_cards = random.sample(list_range,52)
 
 print(20*'*',"Total Cards in deck are  :",len(deck_data),20*'*')
 print(50*'-') 
@@ -88,15 +88,7 @@ print(50*'-')
 for each_card_3 in player3_cards:
     print(" {} {} of {} ".format(each_card_3['color'],each_card_3['shape'],each_card_3["card"]))
 
-card_in_center = []
 
-for centr_card in center_card_list:
-    card_in_center.append(deck_data[centr_card])
-
-for each_center_card in card_in_center:
-    center_card_val = " {} {} of {} ".format(each_center_card['color'],each_center_card['shape'],each_center_card["card"])
-
-print(10*'-',"Card in center :" ,center_card_val)
 
 combine_list = player1_cards + player2_cards + player3_cards
 
@@ -104,137 +96,75 @@ combine_list = player1_cards + player2_cards + player3_cards
 deck_after_distribution = []
 num_ = 0
 
-while num_ <= 51:
 
-    if deck_data[num_] not in combine_list and deck_data[num_] not in card_in_center:
-        
-        deck_after_distribution.append(deck_data[num_])
-        
-        num_ += 1
-    else :
-        
-        num_ += 1
-        
-print(50*'-') 
-print(50*'-') 
-print(20*'*' ,"After distribution number of cards are :",len(deck_after_distribution),20*'*')
-print(50*'-') 
-print(50*'-') 
-
-
-# player1 move to make  
-# card match top center either in number or in shape 
-# while True :
-
-player_1_card_index = 0
-player_1_card_index_for_if = 0
-
-for each_cards in player1_cards:
-    
-    
-
-    if each_cards['shape'] == each_center_card['shape'] or each_cards['card'] == each_center_card['card']:
-
-        while player_1_card_index_for_if < 1 :
-
-            print("---------------------- player_1 have card match with center with either shape or number ")
-            
-
-            player_1_match_card = player1_cards[player_1_card_index]
-            print(30*'=')
-            print("Match card is : {} {} of {}".format(player_1_match_card['color'],player_1_match_card['shape'],player_1_match_card['card']))
-
-            card_in_center.append(player_1_match_card)
-            player1_cards.pop(player_1_card_index)
-            
-            player_1_card_index_for_if += 1
-
-    else :
-        
-        player_1_card_index += 1
-
-
-# if len(player1_cards) == 0:
-#     print("player 1 wins")
-#     break
-
-# print(30*'=')
-
-# for each_center_card in card_in_center:
-#     # print("-==============================")
-#     center_card_after = "----------Now Cards in center are  : {} {} of {} ".format(each_center_card['color'],each_center_card['shape'],each_center_card["card"])
-#     print(center_card_after)
-# print(30*'=')
-
-
-
-player_2_card_index = 0
-player_2_card_index_for_if = 0
-
-for each_cards in player2_cards:
-
-
-    if each_cards['shape'] == each_center_card['shape'] or each_cards['card'] == each_center_card['card']:
-
-        while player_2_card_index_for_if < 1 :
-
-            print("---------------------- player_2 have card match with center with either shape or number ")
-            
-
-            player_2_match_card = player2_cards[player_2_card_index]
-            print(30*'=')
-            print("Match card is : {} {} of {}".format(player_2_match_card['color'],player_2_match_card['shape'],player_2_match_card['card']))
-
-            card_in_center.append(player_2_match_card)
-            player2_cards.pop(player_2_card_index)
-            
-            player_2_card_index_for_if += 1
-
-    else :
-        
-        player_2_card_index += 1
-
-# if len(player2_cards) == 0:
-#     print("player 2 wins")
-#     break
-
-
-player_3_card_index = 0
-player_3_card_index_for_if = 0
-
-for each_cards in player3_cards:
-
-
-    if each_cards['shape'] == each_center_card['shape'] or each_cards['card'] == each_center_card['card']:
-
-        while player_3_card_index_for_if < 1 :
-
-            print("---------------------- player_3 have card match with center with either shape or number ")
-            
-
-            player_3_match_card = player3_cards[player_3_card_index]
-            print(30*'=')
-            print("Match card is : {} {} of {}".format(player_3_match_card['color'],player_3_match_card['shape'],player_3_match_card['card']))
-
-            card_in_center.append(player_3_match_card)
-            player3_cards.pop(player_3_card_index)
-            
-            player_3_card_index_for_if += 1
-
-    else :
-        
-        player_3_card_index += 1
-
-
-        # print(30*'=')
-
-# if len(player3_cards) == 0:
-#     print("player 3 wins")
-#     break
-
+card_in_center = []
+for centr_card in center_card_list:
+    card_in_center.append(deck_data[centr_card])
 
 for each_center_card in card_in_center:
-    # print("-==============================")
-    center_card_after = "----------Now Cards in center are  : {} {} of {} ".format(each_center_card['color'],each_center_card['shape'],each_center_card["card"])
-    print(center_card_after)
-print(30*'=')
+    center_card_val = " {} {} of {} ".format(each_center_card['color'],each_center_card['shape'],each_center_card["card"])
+
+    print(10*'-',"Card in center :" ,center_card_val)
+
+
+
+
+#     if deck_data[num_] not in combine_list and deck_data[num_] not in card_in_center:
+        
+#         deck_after_distribution.append(deck_data[num_])
+        
+#         num_ += 1
+#     else :
+        
+#         num_ += 1
+        
+# # print(50*'-') 
+# # print(50*'-') 
+# print(20*'*' ,"After distribution number of cards are :",len(deck_after_distribution),20*'*')
+# # print(50*'-') 
+# # # print(50*'-') 
+# pop_num = 0
+# while len(player1_cards) >= 1 :
+
+# # randn = random.randint(16,36)
+
+# # for each_center_card in card_in_center:
+# #     print("center card" , each_center_card['shape'])
+
+#     for each_card_1 in player1_cards:
+#         print(" {} {} of {} ".format(each_card_1['color'],each_card_1['shape'],each_card_1["card"]))
+
+
+#         # print("player 1 card" ,each_card_1['shape'],"and",each_card_1['card'])
+#     for each_card_1 in player1_cards:
+#         randn = random.randint(16,36)
+
+#         print(each_card_1['shape'],each_card_1['card'])
+#         if each_card_1['shape'] == card_in_center[-1]['shape'] or each_card_1['card'] == card_in_center[-1]['card'] :
+            
+#             print(pop_num)
+#             append_num = player1_cards.pop(pop_num)
+#             print("apend number ============================================",append_num)
+#             # player1_cards.pop(pop_num)
+#             card_in_center.append(append_num)
+#             print("length of player 1 cards after pop",len(player1_cards))
+
+#             print("yes")
+
+
+#         else :
+#             print("no")
+#             # print(random_cards)
+#             check = 0
+#             while check != 1:
+#                 randn = random.randint(16,36)
+#                 print( "rnad ", randn)
+#                 print(deck_data[random_cards[randn]])
+#                 if deck_data[random_cards[randn]] not in player1_cards :
+#                     player1_cards.append(deck_data[random_cards[15 + randn]])
+#                     print("____")
+#                     check = 1
+                
+
+                
+#             print("length of player 1 cards",len(player1_cards))
